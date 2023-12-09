@@ -1,2 +1,2 @@
 # Automated-Selection-System-
-Based on Personality Traita
+Based on Personality Traits
