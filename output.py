@@ -134,6 +134,7 @@ def process_resume(resume_file, dataset):
         if 'pdf_document' in locals():
             pdf_document.close()
 
+#ADD More skills that You require below
 skills_to_find = ["Java", "Python", "SQL", "C++", "JavaScript", "HTML/CSS", "C#", "PHP", "Data Structures",
                   "R", "Data Analysis", "React", "Node.js", "Machine Learning", "Angular", "UX Design",
                   "Data Science", "Database Administration"]
