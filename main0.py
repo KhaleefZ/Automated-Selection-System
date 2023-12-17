@@ -75,10 +75,10 @@ else:
 df.to_csv('final_candidate_dataset0.csv', index=False)
 
 if hired_candidates:
-    sender_email = "71762133044@cit.edu.in"
-    sender_password = "mani@2133044"
-    smtp_server = "smtp.gmail.com"
-    smtp_port = 587
+    sender_email = "" #Companys or Respective mail id
+    sender_password = "" #Respective mail password
+    smtp_server = "smtp.gmail.com" # Change according to your mail id
+    smtp_port = 587 # Change according to your mail id
 
     server = smtplib.SMTP(smtp_server, smtp_port)
     server.starttls()
