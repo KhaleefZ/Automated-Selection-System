@@ -1,44 +1,152 @@
-# Automated-Selection-System- Based on Personality Traits
+# 🤖 Automated Selection System Based on Personality Traits
 
-This project is an automated selection system for candidates based on their skills and personality traits. The system involves a web application built using Flask, where candidates can sign up, log in, and submit their details, including a resume. The system analyzes the resume to extract skills and education information.
+A **smart hiring solution** built using **Flask + Machine Learning** to automate the initial candidate selection process based on **skills and personality traits**. Designed to streamline recruitment by evaluating resumes, testing personalities, and making data-driven decisions — all from a user-friendly web interface.
 
-Key Components:
+---
 
-1. *Web Application:*
-   - Users can sign up and log in.
-   - Two types of candidates are considered: junior and experienced.
-   - Candidates submit their details, including a resume.
+## 🌟 Key Features
 
-2. *Resume Processing:*
-   - Resumes are processed to extract skills and education information using PyMuPDF (fitz) and regular expressions.
-   - Skills and education keywords are predefined.
+### 1. 🌐 Web Application
+- Built with **Flask** for a smooth user experience.
+- Two types of candidate flows:  
+  - 🧑‍🎓 *Junior*  
+  - 👩‍💼 *Experienced*
+- Secure **Sign Up** and **Login**.
+- Candidates upload their **resume** and submit details for evaluation.
 
-3. *Candidate Assessment:*
-   - Candidates are assessed based on a personality test (Openness, Conscientiousness, Extroversion, Agreeableness, Neuroticism).
-   - Skill competency is evaluated.
+---
 
-4. *Data Storage:*
-   - Candidate data is stored in CSV files (candidate0.csv and candidate.csv for junior and experienced candidates, respectively).
+### 2. 📄 Resume Processing
+- Utilizes **PyMuPDF (fitz)** and **Regular Expressions** to extract:
+  - 📘 **Educational Qualifications**
+  - 🛠️ **Skills**
+- Matches extracted data against **predefined keywords** to map competencies.
 
-5. *Automated Hiring:*
-   - Linear Regression is used to assess skill competency.
-   - Random Forest Classifier is used to assess personality.
-   - A threshold-based approach is employed for hiring decisions.
+---
 
-6. *Email Notifications:*
-   - Successful candidates receive email notifications.
-   - The emails are personalized and inform candidates about their selection for the next round.
+### 3. 🧠 Candidate Assessment
 
-7. *Scalability and Extension:*
-   - The project supports both junior and experienced candidate types.
-   - The selection criteria can be adjusted by modifying thresholds or incorporating additional features.
+#### ✅ Skill Competency
+- Modeled using **Linear Regression** to score candidates on relevant skill areas.
 
-8. *Machine Learning Models:*
-   - Linear Regression for skill competency assessment.
-   - Random Forest Classifier for personality assessment.
+#### 🧪 Personality Evaluation
+- Based on the **Big Five Personality Traits**:
+  - Openness  
+  - Conscientiousness  
+  - Extroversion  
+  - Agreeableness  
+  - Neuroticism  
+- Assessed using a **Random Forest Classifier**.
 
-9. *Final Results:*
-   - Successful candidates are recorded in the final_candidate_dataset0.csv file.
-   - Email notifications are sent to hired candidates.
+---
 
-Note: This project aims to automate the initial candidate selection process based on a combination of skills and personality assessments. The code demonstrates how to implement a web application, integrate resume processing, apply machine learning models for assessment, and notify candidates about their selection results.
+### 4. 🗃️ Data Storage
+- Candidate data is logged and organized into:
+  - `candidate0.csv` → *Junior candidates*  
+  - `candidate.csv` → *Experienced candidates*  
+  - `final_candidate_dataset0.csv` → *Selected candidates*
+
+---
+
+### 5. 📬 Email Notifications
+- **Automated email system** informs selected candidates.
+- Emails are:
+  - 🔒 Securely sent  
+  - 🎯 Personalized  
+  - ✅ Triggered based on selection criteria
+
+---
+
+### 6. ⚙️ Selection Logic
+- Selection is based on **customizable thresholds** for:
+  - Personality fit
+  - Skill competency score
+- Only candidates who meet both criteria are shortlisted.
+
+---
+
+### 7. 📈 Machine Learning Models
+| Purpose            | Model Used             |
+|--------------------|------------------------|
+| Skill Assessment   | Linear Regression       |
+| Personality Fit    | Random Forest Classifier|
+
+Both models are trained to make accurate predictions on candidate suitability.
+
+---
+
+### 8. 🚀 Scalability & Extensibility
+- Easily extensible for:
+  - New job roles or departments
+  - More nuanced resume parsing
+  - Integration with HRMS/ATS platforms
+- Modular structure supports threshold adjustments and future AI enhancements.
+
+---
+
+## 📦 Folder Structure
+
+bash
+
+├── app/
+
+│   ├── templates/         # HTML templates (login, dashboard, etc.)
+
+│   ├── static/            # CSS, JS, images
+
+│   ├── models/            # ML models (regression.pkl, classifier.pkl)
+
+│   ├── utils/             # Resume parser, personality scorer
+
+│   ├── routes.py          # Flask routes and views
+
+│   └── app.py             # Main Flask application
+
+├── data/
+
+│   ├── candidate0.csv
+
+│   ├── candidate.csv
+
+│   └── final_candidate_dataset0.csv
+
+├── ml/
+
+│   ├── train_models.py    # Training scripts
+
+│   └── models.pkl
+
+├── requirements.txt
+
+├── README.md
+
+
+---
+
+## ✅ Tech Stack
+
+- **Frontend:** HTML5, CSS3, Bootstrap  
+- **Backend:** Python, Flask  
+- **ML Models:** scikit-learn  
+- **Resume Parsing:** PyMuPDF (fitz), RegEx  
+- **Email Service:** smtplib  
+- **Data Format:** CSV  
+
+---
+
+
+## 📈 Future Enhancements
+
+- 📄 OCR-enabled resume processing (PDF/Word/Images)
+- 🧬 NLP-based skill extraction using spaCy/BERT
+- 📉 Dashboard analytics for recruiters (Power BI/Tableau)
+- 🔁 Integration with job boards (LinkedIn, Indeed)
+- 🔐 Role-based recruiter panel for shortlisting and feedback
+
+---
+
+## 📢 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
